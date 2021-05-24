@@ -3,8 +3,7 @@ module.exports = {
         "browser": true,
         "commonjs": true,
         "es2021": true,
-        "jest": true,
-        "webdriverio/wdio": true,
+        "jest": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {

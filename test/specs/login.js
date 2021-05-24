@@ -6,10 +6,16 @@ describe('Login test', () => {
     })
 
     it('should login with valid credentials', async () => {
-        await loginPage.login('problem_user', 'secret_sauce');
+        await loginPage.login(loginPage.correctUsername, loginPage.correctPassword);
         await expect(await browser.getUrl()).toBe("https://www.saucedemo.com/inventory.html");
         browser.pause(1000);
+        
+        await (await loginPage.menuButton).click();
+        browser.pause(1000);
+        await (await loginPage.logoutButton).click();
+        browser.pause(1000);
     });
+
 
     it('should not login with invalid credentials: Wrong username and wrong password', async () => {
         await loginPage.login('user_invalid', 'secret_couce');
@@ -32,17 +38,14 @@ describe('Login test', () => {
 
 
     it('Should not login with invalid credentials: Empty username and right password', async () => {
-        await (await loginPage.inputUsername).clearValue();
-        await (await loginPage.inputPassword).setValue('secret_souce');
-        await expect(loginPage.loginErrorMessageEmptyUserName);
-        browser.pause(1000);
+        
         
     });
 
     it('Should not login with invalid credentials: Right username and empty password', async () => {
-		await (await loginPage.inputUsername).setValue("performance_glitch_user");
+		await (await loginPage.inputUsername).setValue('standard_user');
 		await (await loginPage.inputPassword).clearValue();
-	    await expect (loginPage.loginErrorMessageEmptyPassword)
+	    await expect (loginPage.loginErrorMessageEmptyPassword);
         browser.pause(1000);
 	});
 

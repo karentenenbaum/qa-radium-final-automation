@@ -1,6 +1,5 @@
 const Page = require('./page');
 
-
 class LoginPage extends Page {
 
     get inputUsername () { 
@@ -15,24 +14,23 @@ class LoginPage extends Page {
         { return $('Epic sadface: Username is required')}
     get loginErrorMessageEmptyPassword () 
         { return $('Epic sadface: Username is required')}
-
-    get correctUserName() 
-        { return $(standard_user)}
+    get menuButton()
+        { return $('#react-burger-menu-btn')}   
+    get logoutButton()
+        { return $('#logout_sidebar_link')}
     
-        get correctPassword()
-        { return $(secret_sauce)}
+    correctUsername = 'standard_user'
+    correctPassword = 'secret_sauce'
 
 
+    async login (username, password) {
+        await (await this.inputUsername).setValue(username);
+        await (await this.inputPassword).setValue(password);
+        await (await this.btnSubmit).click();
+    }
 
-async login (correctUsername, correctPassword) {
-
-    await (await this.Username).setValue(username);
-    await (await this.inputPassword).setValue(password);
-    await (await this.btnSubmit).click();
-}
-
-open () {
-    return super.open("https://www.saucedemo.com/");
+    open () {
+        return super.open("https://www.saucedemo.com/");
     }
 }
 
