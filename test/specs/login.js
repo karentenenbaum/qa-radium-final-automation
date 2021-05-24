@@ -23,26 +23,28 @@ describe('Login test', () => {
         browser.pause(1000);
     });
 
-    it('Should not login with invalid credentials: Right username and wrong password', async () => {
+    it('should not login with invalid credentials: Right username and wrong password', async () => {
 		await loginPage.login('standard_user', 'invalid_password');
 	    await expect(loginPage.loginErrorMessage);
         browser.pause(1000);
     });
     
-    it('Should not login with invalid credentials: Wrong username and right password', async () => {
-        await loginPage.login('invalid_user', 'secret_souce');
+    it('should not login with invalid credentials: Wrong username and right password', async () => {
+        await loginPage.login('invalid_user', 'secret_sauce');
         await expect(loginPage.loginErrorMessage);
         browser.pause(1000);
     
     });
 
 
-    it('Should not login with invalid credentials: Empty username and right password', async () => {
-        
-        
+    it('should not login with invalid credentials: Empty username and right password', async () => {
+        await (await loginPage.inputUsername).clearValue();
+        await (await loginPage.inputPassword).setValue('secret_sauce');
+        await expect (loginPage.loginErrorMessageEmptyUserName); 
+        browser.pause(1000);  
     });
 
-    it('Should not login with invalid credentials: Right username and empty password', async () => {
+    it('should not login with invalid credentials: Right username and empty password', async () => {
 		await (await loginPage.inputUsername).setValue('standard_user');
 		await (await loginPage.inputPassword).clearValue();
 	    await expect (loginPage.loginErrorMessageEmptyPassword);

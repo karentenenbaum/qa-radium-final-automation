@@ -11,9 +11,9 @@ class LoginPage extends Page {
     get loginErrorMessage () 
         { return $("h3=Epic sadface: Username and password do not match any user in this service")}
     get loginErrorMessageEmptyUserName () 
-        { return $('Epic sadface: Username is required')}
+        { return $("h3=Epic sadface: Username is required")}
     get loginErrorMessageEmptyPassword () 
-        { return $('Epic sadface: Username is required')}
+        { return $("h3=Epic sadface: Username is required")}
     get menuButton()
         { return $('#react-burger-menu-btn')}   
     get logoutButton()
