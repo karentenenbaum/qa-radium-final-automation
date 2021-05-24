@@ -1,0 +1,31 @@
+{
+  "name": "qa-radium-final-automation",
+  "version": "1.0.0",
+  "description": "Test repository for the QA automation course. These files are the answer corresponding to the weekly problem 15",
+  "main": "index.js",
+  "directories": {
+    "test": "test",
+  "scripts": {
+    "test": "npx wdio run ./wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karentenenbaum/qa-radium-final-automation.git"
+  },
+  "author": "Karen Tenenbaum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karentenenbaum/qa-radium-final-automation/issues"
+  },
+  "homepage": "https://github.com/karentenenbaum/qa-radium-final-automation#readme",
+  "dependencies": {
+    "@wdio/cli": "^7.6.0"
+  },
+  "devDependencies": {
+    "@wdio/jasmine-framework": "^7.6.0",
+    "@wdio/local-runner": "^7.6.0",
+    "@wdio/spec-reporter": "^7.6.0",
+    "chromedriver": "^90.0.1",
+    "wdio-chromedriver-service": "^7.1.0"
+  }
+}
