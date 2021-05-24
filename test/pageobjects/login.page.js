@@ -22,15 +22,18 @@ class LoginPage extends Page {
         get correctPassword()
         { return $(secret_sauce)}
 
-open () {
-    return super.open("");
-    }
+
+
+async login (correctUsername, correctPassword) {
+
+    await (await this.Username).setValue(username);
+    await (await this.inputPassword).setValue(password);
+    await (await this.btnSubmit).click();
 }
 
-    async login (username, password) {
-        await (await this.inputUsername).setValue(username);
-        await (await this.inputPassword).setValue(password);
-        await (await this.btnSubmit).click();
+open () {
+    return super.open("https://www.saucedemo.com/");
     }
+}
 
 module.exports = new LoginPage();
