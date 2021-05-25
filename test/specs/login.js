@@ -37,12 +37,10 @@ describe('Login test', () => {
 
 
     it('should not login with invalid credentials: Empty username and right password', async () => {
-        await browser.pause(5000);
         await loginPage.login('', 'secret_sauce');
         const message = await (await loginPage.loginErrorMessage).getText();
         await browser.pause(1000);
         await expect(message).toMatch('Epic sadface: Username is required');
-        await browser.pause(5000);
     });
 
 
