@@ -14,6 +14,14 @@ class Inventory extends Page {
         return $('#add-to-cart-sauce-labs-backpack');
     }
 
+    get addSecondProductButton() {
+        return $('#add-to-cart-sauce-labs-bike-light');
+    }
+
+    get addThirdProductButton() {
+        return $('#add-to-cart-sauce-labs-bolt-t-shirt');
+    }
+
     get removeFirstProductButton() {
         return $('#remove-sauce-labs-backpack');
     }
