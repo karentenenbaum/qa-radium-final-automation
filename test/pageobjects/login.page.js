@@ -22,6 +22,11 @@ class LoginPage extends Page {
         return $('#logout_sidebar_link')
     }
 
+    get loginErrorMessage() {
+        return $("h3[data-test='error']")
+    }
+
+
     correctUsername = 'standard_user'
     correctPassword = 'secret_sauce'
 
