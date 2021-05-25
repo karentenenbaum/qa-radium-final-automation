@@ -23,4 +23,8 @@ describe("inventory tests", () => {
     it ('remove an item to cart'), async () => {  
         await (await Inventory.removeButton).click();
         browser.pause(1000);
+        await expect(await Inventory.cartNumber).getText()).toBe();
+        browser.pause(1000);
+        
     });
+
